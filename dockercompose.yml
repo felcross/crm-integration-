@@ -20,4 +20,4 @@ volumes:
 networks:
   proxy_network:
     external: true
-    name: nginx-proxy-manager_default
+    name: rede_vps
