@@ -1,0 +1,23 @@
+services:
+  crm-ai-mvp:
+    build: .
+    container_name: crm-ai-mvp
+    restart: unless-stopped
+    ports:
+      - "8502:8501"
+    env_file:
+      - .env
+    volumes:
+      - cache_hubspot:/app/.cache_hubspot
+    networks:
+      - proxy_network
+
+volumes:
+  cache_hubspot:
+
+# Conecta na mesma rede do nginx-proxy-manager
+# para ele conseguir rotear crm.felbatista.tech → container
+networks:
+  proxy_network:
+    external: true
+    name: nginx-proxy-manager_default

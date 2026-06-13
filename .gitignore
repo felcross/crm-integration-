@@ -1,0 +1,7 @@
+.env
+.cache_hubspot/
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.db
